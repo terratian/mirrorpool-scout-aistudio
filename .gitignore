@@ -19,3 +19,4 @@ dist/
 *.zip
 *.patch
 dist-firefox/
+*.zip
