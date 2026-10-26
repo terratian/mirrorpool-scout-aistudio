@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mirror Pool Scout Utility</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 12px;
+            width: 280px;
+            background-color: #030712;
+            color: #f8fafc;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+        .header {
+            font-size: 11px;
+            font-weight: 700;
+            color: #10b981;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #1e293b;
+            padding-bottom: 6px;
+        }
+        .inspect-card {
+            background: #0b1120;
+            border: 1px solid #1e293b;
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            color: #94a3b8;
+        }
+        .row span:last-child {
+            color: #f8fafc;
+            font-weight: 600;
+        }
+        .btn {
+            width: 100%;
+            background-color: #3b82f6;
+            color: #fff;
+            border: none;
+            padding: 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 12px;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-bottom: 6px;
+        }
+        .btn:hover { background-color: #2563eb; }
+        .btn-green { background-color: #10b981; color: #030712; }
+        .btn-green:hover { background-color: #059669; color: white; }
+        .status-msg {
+            font-size: 10px;
+            text-align: center;
+            color: #64748b;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span>🔮 MP SCOUT UTILITY</span>
+        <span id="site-badge" style="color: #38bdf8;">Detecting...</span>
+    </div>
+
+    <div class="inspect-card">
+        <div id="card-title" style="color: #38bdf8; font-weight: 700; margin-bottom: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Analyzing active page...</div>
+        <div class="row"><span id="label-a">Metric A:</span> <span id="val-a" style="color: #f59e0b;">---</span></div>
+        <div class="row"><span id="label-b">Metric B:</span> <span id="val-b" style="color: #3b82f6;">---</span></div>
+    </div>
+
+    <button class="btn btn-green" id="migrate-btn">📥 Migrate Dataset</button>
+    <button class="btn" id="open-dashboard-btn">📊 Open Side Panel</button>
+    <div class="status-msg" id="status-text">Ready for user extraction</div>
+
+    <script src="metrics-schema.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>

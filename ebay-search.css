@@ -1,0 +1,16 @@
+/* Mirror Pool Scout: foil shimmer for deal listings on eBay search results (injected by the extension, so page CSP cannot block it). */
+@keyframes mpfoilb { 0% { background-position: 0% 50%; } 100% { background-position: 250% 50%; } }
+@keyframes mpfoilsheen { 0% { background-position: 160% 0; } 100% { background-position: -100% 0; } }
+li.mp-foil-deal { position: relative !important; outline: 2px solid #4ade80 !important; outline-offset: 3px; border-radius: 12px; }
+li.mp-foil-deal::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 2; border-radius: 12px;
+  background: linear-gradient(115deg, transparent 25%, rgba(255,255,255,.18) 38%, rgba(0,255,200,.22) 48%, rgba(255,0,170,.18) 58%, rgba(255,230,0,.16) 66%, transparent 78%);
+  background-size: 260% 100%; animation: mpfoilsheen 3.2s linear infinite; mix-blend-mode: screen;
+}
+.mp-deal-badge.mp-foil-badge {
+  background-image: linear-gradient(110deg, #052e16 0%, #14532d 28%, #0e7490 50%, #6d28d9 72%, #052e16 100%) !important;
+  background-size: 250% 100%; animation: mpfoilb 3s linear infinite; color: #ecfdf5 !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  li.mp-foil-deal::after, .mp-deal-badge.mp-foil-badge { animation: none; }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Mirror Pool Scout",
+  "description": "Standalone MTG procurement and arbitrage terminal with live market spreads (TCGplayer vs eBay), deck chase targets, paper vs MTGO TIX arbitrage, and collection management.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

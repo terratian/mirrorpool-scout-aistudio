@@ -1,0 +1,97 @@
+#mirrorpool-badge-root {
+background: #0d1117 !important;
+border: 1px solid #30363d !important;
+border-radius: 6px !important;
+padding: 12px !important;
+margin: 12px 0 !important;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+color: #c9d1d9 !important;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+z-index: 999999 !important;
+display: block !important;
+clear: both !important;
+}
+
+#mirrorpool-badge-root .mp-header {
+display: flex !important;
+justify-content: space-between !important;
+margin-bottom: 10px !important;
+border-bottom: 1px solid #30363d !important;
+padding-bottom: 6px !important;
+}
+
+#mirrorpool-badge-root .mp-brand {
+color: #00ffcc !important;
+font-size: 11px !important;
+font-weight: 800 !important;
+letter-spacing: 0.5px !important;
+}
+
+#mirrorpool-badge-root .mp-status {
+color: #8b949e !important;
+font-size: 10px !important;
+font-weight: bold !important;
+}
+
+#mirrorpool-badge-root .mp-metrics-row {
+display: flex !important;
+justify-content: space-between !important;
+margin-bottom: 10px !important;
+text-align: left !important;
+}
+
+#mirrorpool-badge-root .mp-metric-label {
+font-size: 10px !important;
+color: #8b949e !important;
+text-transform: uppercase !important;
+margin-bottom: 2px !important;
+}
+
+#mirrorpool-badge-root .mp-metric-val {
+font-size: 14px !important;
+font-weight: bold !important;
+}
+
+#mirrorpool-badge-root .mp-latency-row {
+display: flex !important;
+justify-content: space-between !important;
+align-items: center !important;
+background: #010409 !important;
+padding: 6px !important;
+border-radius: 4px !important;
+margin-bottom: 10px !important;
+}
+
+#mirrorpool-badge-root .mp-actions-row {
+display: flex !important;
+gap: 8px !important;
+}
+
+#mirrorpool-badge-root .mp-btn {
+flex: 1 !important;
+padding: 6px 10px !important;
+border-radius: 4px !important;
+border: 1px solid #30363d !important;
+background: #21262d !important;
+color: #c9d1d9 !important;
+cursor: pointer !important;
+font-weight: 600 !important;
+font-size: 11px !important;
+text-decoration: none !important;
+text-align: center !important;
+transition: background 0.2s !important;
+}
+
+#mirrorpool-badge-root .mp-btn:hover {
+background: #30363d !important;
+}
+
+#mirrorpool-badge-root .mp-btn-upgrade {
+border-color: #00ffcc !important;
+color: #00ffcc !important;
+background: rgba(0, 255, 204, 0.05) !important;
+}
+
+#mirrorpool-badge-root .mp-btn-upgrade:hover {
+background: rgba(0, 255, 204, 0.15) !important;
+}

@@ -1,0 +1,117 @@
+{
+  "manifest_version": 3,
+  "name": "Mirror Pool Scout",
+  "version": "1.5.1",
+  "description": "Live MTG market procurement, visual decklist parsing, and financial tracking.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "alarms",
+    "notifications",
+    "scripting"
+  ],
+  "action": {
+    "default_title": "Mirror Pool Scout",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "host_permissions": [
+    "*://*.ebay.com/*",
+    "*://*.tcgplayer.com/*",
+    "*://*.fanaticscollect.com/*",
+    "*://*.goldin.co/*",
+    "*://*.cardmarket.com/*",
+    "*://*.mtgdecks.net/*",
+    "*://*.mtggoldfish.com/*",
+    "*://*.magic.gg/*",
+    "*://*.wizards.com/*",
+    "https://api.scryfall.com/*",
+    "*://*.mtgscavenger.com/*",
+    "https://api.gumroad.com/*",
+    "*://*.moxfield.com/*",
+    "https://api2.moxfield.com/*",
+    "*://*.archidekt.com/*",
+    "*://*.tappedout.net/*",
+    "*://*.deckstats.net/*",
+    "*://scryfall.com/*",
+    "*://*.mtgtop8.com/*",
+    "*://*.edhrec.com/*",
+    "*://*.aetherhub.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.ebay.com/itm/*",
+        "*://*.tcgplayer.com/product/*",
+        "*://*.fanaticscollect.com/*",
+        "*://*.goldin.co/*",
+        "*://*.cardmarket.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "*://*.mtgdecks.net/*",
+        "*://*.mtggoldfish.com/*",
+        "*://*.tcgplayer.com/*",
+        "*://*.magic.gg/*",
+        "*://*.wizards.com/*",
+        "*://*.cardmarket.com/*",
+        "*://*.mtgscavenger.com/*"
+      ],
+      "js": [
+        "affiliate.js",
+        "auto-detector.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "*://*.ebay.com/sch/*"
+      ],
+      "js": [
+        "ebay-search.js"
+      ],
+      "run_at": "document_idle",
+      "css": [
+        "ebay-search.css"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.moxfield.com/decks/*",
+        "*://*.archidekt.com/decks/*",
+        "*://*.tappedout.net/mtg-decks/*",
+        "*://*.deckstats.net/decks/*",
+        "*://scryfall.com/*decks*",
+        "*://*.mtgtop8.com/*",
+        "*://*.edhrec.com/*",
+        "*://*.aetherhub.com/*"
+      ],
+      "js": [
+        "listformats.js",
+        "deckextract.js",
+        "deckpill.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "short_name": "Scout",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
