@@ -1,0 +1,626 @@
+/* ==========================================================================
+   MIRROR POOL™ SCOUT — KRAKEN SUITE DESIGN SYSTEM & DUAL THEME ENGINE
+   ========================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap");
+
+:root {
+    /* Abyss Dark (Default Kraken Deep Dark Theme) */
+    --bg-base: #060913;
+    --bg-sidebar: #0a0f1d;
+    --bg-panel: #0d1527;
+    --bg-card: #121c33;
+    --bg-card-hover: #172442;
+    --border-color: #1e293b;
+    --border-subtle: rgba(148, 163, 184, 0.18);
+    --border-highlight: rgba(0, 255, 204, 0.35);
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --text-dim: #64748b;
+    --accent-teal: #00ffcc;
+    --accent-green: #10b981;
+    --accent-blue: #38bdf8;
+    --accent-amber: #f59e0b;
+    --accent-red: #ef4444;
+    --accent-purple: #a855f7;
+    --gold-cta: #eab308;
+    --gold-cta-hover: #facc15;
+    --header-glass: rgba(10, 15, 29, 0.85);
+    --font-display: "Playfair Display", Georgia, serif;
+    --font-ui: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+}
+
+body.theme-light {
+    /* Parchment Light Theme */
+    --bg-base: #f1f5f9;
+    --bg-sidebar: #ffffff;
+    --bg-panel: #ffffff;
+    --bg-card: #f8fafc;
+    --bg-card-hover: #e2e8f0;
+    --border-color: #cbd5e1;
+    --border-subtle: rgba(100, 116, 139, 0.22);
+    --border-highlight: rgba(13, 148, 136, 0.45);
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --text-dim: #64748b;
+    --accent-teal: #0d9488;
+    --accent-green: #16a34a;
+    --accent-blue: #0284c7;
+    --accent-amber: #d97706;
+    --accent-red: #dc2626;
+    --accent-purple: #7e22ce;
+    --gold-cta: #d97706;
+    --gold-cta-hover: #b45309;
+    --header-glass: rgba(255, 255, 255, 0.92);
+}
+
+body {
+    font-family: var(--font-ui) !important;
+    background-color: var(--bg-base) !important;
+    color: var(--text-main) !important;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Tabular Numerals across data points */
+td, .metric-pill strong, .mp-val-market, .mp-val-chase, .tab-num, .ratio-counter {
+    font-variant-numeric: tabular-nums;
+    font-family: var(--font-mono);
+}
+
+/* Top Navigation Bar with Theme Switcher & Kraken Brand */
+#kraken-top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 20px;
+    background: var(--header-glass);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.kraken-brand-zone {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.kraken-logo-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.kraken-brand-text {
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--accent-teal);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.kraken-brand-kicker {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.kraken-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.theme-toggle-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+    border-color: var(--accent-teal);
+    color: var(--accent-teal);
+}
+
+/* Hero "Crack the Meta" Prompt Banner */
+.kraken-hero-banner {
+    position: relative;
+    padding: 32px 28px 24px 28px;
+    margin-bottom: 24px;
+    border-radius: 12px;
+    background: radial-gradient(circle at 80% 20%, rgba(0, 255, 204, 0.08), transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(56, 189, 248, 0.08), transparent 50%),
+                var(--bg-panel);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.kraken-hero-title {
+    font-family: var(--font-display);
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1.15;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.02em;
+}
+
+.kraken-hero-title em {
+    font-style: italic;
+    color: var(--accent-teal);
+    font-weight: 700;
+}
+
+.kraken-hero-subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+    max-width: 640px;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+}
+
+/* Format Filter Pills (Clean Segmented Controls) */
+.kraken-format-pills {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--bg-base);
+    padding: 4px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 16px;
+}
+
+.kraken-format-pill {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+}
+
+.kraken-format-pill:hover {
+    color: var(--text-main);
+}
+
+.kraken-format-pill.active {
+    background: var(--bg-card);
+    color: var(--accent-teal);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+}
+
+/* Prompt Search Input Box */
+.kraken-prompt-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-base);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 8px 12px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.kraken-prompt-box:focus-within {
+    border-color: var(--accent-teal);
+    box-shadow: 0 0 0 2px rgba(0, 255, 204, 0.18);
+}
+
+.kraken-prompt-box input {
+    flex: 1;
+    background: transparent !important;
+    border: none !important;
+    color: var(--text-main) !important;
+    font-size: 14px !important;
+    outline: none !important;
+    padding: 4px 6px !important;
+}
+
+.kraken-build-btn {
+    background: var(--gold-cta);
+    color: #030712;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.kraken-build-btn:hover {
+    background: var(--gold-cta-hover);
+    transform: translateY(-1px);
+}
+
+/* Deck Ratio Gauges (100-Card Commander Ratio Formula) */
+.ratio-dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 10px;
+    margin: 16px 0;
+}
+
+.ratio-gauge-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.ratio-gauge-title {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ratio-gauge-val {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+.ratio-gauge-bar {
+    width: 100%;
+    height: 4px;
+    background: var(--bg-base);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 2px;
+}
+
+.ratio-gauge-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+/* Mana Curve Histogram */
+.mana-curve-container {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 14px;
+    margin: 16px 0;
+}
+
+.mana-curve-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.mana-bars-grid {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    height: 110px;
+    padding-top: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.mana-bar-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    height: 100%;
+    justify-content: flex-end;
+}
+
+.mana-bar-pillar {
+    width: 100%;
+    background: linear-gradient(180deg, var(--accent-teal), #0284c7);
+    border-radius: 4px 4px 0 0;
+    min-height: 4px;
+    transition: height 0.3s ease;
+}
+
+.mana-bar-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.mana-bar-count {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--text-main);
+    font-family: var(--font-mono);
+}
+
+/* Metagame Trends Card Presentation */
+.kraken-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.kraken-meta-card {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kraken-meta-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-teal);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.kraken-card-banner {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    background: #000;
+    position: relative;
+}
+
+.kraken-card-banner-wrap {
+    position: relative;
+}
+
+.kraken-card-banner-scrim {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70%;
+    background: linear-gradient(to top, var(--bg-panel), transparent);
+}
+
+.kraken-meta-content {
+    padding: 14px 16px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.kraken-card-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.kraken-card-name {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+.kraken-delta-badge {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 800;
+    padding: 2px 7px;
+    border-radius: 4px;
+}
+
+.delta-up { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
+.delta-down { background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); }
+
+.kraken-meta-metrics-strip {
+    display: flex;
+    gap: 12px;
+    background: var(--bg-base);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 11px;
+}
+
+.kraken-meta-metrics-strip div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.kraken-meta-metrics-strip span {
+    color: var(--text-dim);
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.kraken-meta-metrics-strip strong {
+    color: var(--text-main);
+    font-family: var(--font-mono);
+}
+
+/* GeForce NOW MTG Arena Collection Bridge */
+.gfn-guide-card {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.gfn-step-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    margin: 16px 0;
+}
+
+.gfn-step-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.gfn-step-num {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--accent-teal);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.gfn-filter-chips {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin: 8px 0;
+}
+
+.gfn-chip {
+    background: var(--bg-base);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    font-size: 11px;
+    font-family: var(--font-mono);
+    padding: 3px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    user-select: all;
+}
+
+.gfn-chip:hover {
+    border-color: var(--accent-teal);
+    color: var(--accent-teal);
+}
+
+.gfn-dropzone {
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+    background: var(--bg-base);
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.gfn-dropzone:hover, .gfn-dropzone.dragover {
+    border-color: var(--accent-teal);
+    background: rgba(0, 255, 204, 0.04);
+}
+
+/* Category card list inside Deck Builder */
+.deck-category-section {
+    margin-bottom: 16px;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.deck-category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+}
+
+.deck-category-title {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.deck-category-count {
+    font-size: 11px;
+    color: var(--accent-teal);
+    font-family: var(--font-mono);
+    font-weight: 700;
+}
+
+.deck-card-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 14px;
+    border-bottom: 1px solid var(--border-subtle);
+    font-size: 12px;
+    transition: background 0.12s ease;
+}
+
+.deck-card-row:hover {
+    background: var(--bg-card-hover);
+}
+
+.deck-card-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+}
+
+.deck-card-qty {
+    font-family: var(--font-mono);
+    font-weight: 800;
+    color: var(--accent-teal);
+    width: 22px;
+}
+
+.deck-card-name {
+    font-weight: 600;
+    color: var(--text-main);
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.deck-card-name:hover {
+    color: var(--accent-blue);
+}
+
+.deck-card-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}

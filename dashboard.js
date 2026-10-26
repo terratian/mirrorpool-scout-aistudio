@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // 1. Sidebar Tab Switching
 function initTabNavigation() {
-    const panels = ["tab-watchlist", "tab-procurement", "tab-arbitrage", "tab-meta", "tab-mydecks", "tab-collection", "tab-bookmarks", "tab-settings"];
+    const panels = ["tab-watchlist", "tab-procurement", "tab-arbitrage", "tab-meta", "tab-mydecks", "tab-collection", "tab-bookmarks", "tab-settings", "tab-builder", "tab-mtga-bridge"];
     const navItems = document.querySelectorAll(".sidebar .nav-item, .nav-item, [data-tab], [data-target]");
 
     navItems.forEach((item) => {
@@ -124,7 +124,9 @@ function initTabNavigation() {
 
             let targetId = explicitTarget;
             if (!targetId || !document.getElementById(targetId)) {
-                if (text.includes("watch")) targetId = "tab-watchlist";
+                if (text.includes("builder") || text.includes("deck build")) targetId = "tab-builder";
+                else if (text.includes("geforce") || text.includes("bridge") || text.includes("mtga")) targetId = "tab-mtga-bridge";
+                else if (text.includes("watch")) targetId = "tab-watchlist";
                 else if (text.includes("buy list") || text.includes("chase") || text.includes("procure") || text.includes("hunt")) targetId = "tab-procurement";
                 else if (text.includes("arbitrage")) targetId = "tab-arbitrage";
                 else if (text.includes("meta") || text.includes("insight")) targetId = "tab-meta";

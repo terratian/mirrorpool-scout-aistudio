@@ -20,3 +20,4 @@ dist/
 *.patch
 dist-firefox/
 *.zip
+bun.lock

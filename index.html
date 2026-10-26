@@ -8,6 +8,7 @@
     <meta property="og:title" content="Mirror Pool Scout">
     <meta property="og:description" content="Standalone MTG procurement and arbitrage terminal with live market spreads (TCGplayer vs eBay), deck chase targets, paper vs MTGO TIX arbitrage, and collection management.">
     <link rel="icon" type="image/png" href="icon48.png">
+    <link rel="stylesheet" href="kraken-suite.css">
     <style>
         /* Deal "foil" effects: rows and Buy List cards with a real delivered deal shimmer like a foil card. */
         @keyframes mpFoilSweep { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
@@ -653,11 +654,12 @@ table tbody td {
     <div class="sidebar">
 
         <div class="brand-logo">◈ MIRROR POOL™ SCOUT</div>
-        <div class="nav-section">Workspace</div>
-        <a class="nav-item active" data-tab="tab-watchlist">Live Watchlist</a>
+        <a class="nav-item active" data-tab="tab-meta">◈ Meta Trends</a>
+        <a class="nav-item" data-tab="tab-builder">⚡ AI Deck Builder</a>
+        <a class="nav-item" data-tab="tab-mtga-bridge">🎮 MTGA GeForce Bridge</a>
+        <a class="nav-item" data-tab="tab-watchlist">Live Watchlist</a>
         <a class="nav-item" data-tab="tab-procurement">Buy List</a>
         <a class="nav-item" data-tab="tab-arbitrage">Arbitrage (Paper vs TIX)</a>
-        <a class="nav-item" data-tab="tab-meta">Meta Trends</a>
         <a class="nav-item" data-tab="tab-mydecks">📂 My Decks</a>
         <a class="nav-item" data-tab="tab-collection">📚 My Collection</a>
         <a class="nav-item" data-tab="tab-bookmarks">★ Bookmarks</a>
@@ -826,6 +828,12 @@ table tbody td {
             <div id="mp-bookmarks-body"></div>
         </div>
 
+        <!-- 4d. Kraken AI Deck Builder -->
+        <div id="tab-builder" class="tab-panel"></div>
+
+        <!-- 4e. MTGA GeForce NOW Collection Bridge -->
+        <div id="tab-mtga-bridge" class="tab-panel"></div>
+
         <!-- 5. Settings -->
         <div id="tab-settings" class="tab-panel">
             <div class="page-title">Settings & Engine Configuration</div>
@@ -848,6 +856,7 @@ table tbody td {
     <script src="landed.js"></script>
     <script src="features2.js"></script>
     <script src="features3.js"></script>
+    <script src="kraken-suite.js"></script>
 <!-- MP_OVERLAY_START -->
 <div id="mp-card-hover-overlay">
     <img id="mp-hover-card-img" src="" alt="Card Preview" />
